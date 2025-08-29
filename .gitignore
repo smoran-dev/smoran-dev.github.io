@@ -1,5 +1,12 @@
+# Jekyll build output
 _site
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
 vendor
+
+# Ruby / Bundler
+/vendor/
+.bundle/
+log/
+tmp/
