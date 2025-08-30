@@ -72,21 +72,41 @@ layout: default
   </section>
   {% endif %}
 
-  {% if r.education %}
-  <section>
-    <h2>Education</h2>
-    <ul>
-      {% for e in r.education %}<li>{{ e }}</li>{% endfor %}
-    </ul>
-  </section>
-  {% endif %}
+{% if r.education %}
+<section>
+  <h2>Education</h2>
+  <ul>
+    {% for e in r.education %}
+      {% if e contains 'degree' %}
+        <li>
+          {{ e.degree }} — {{ e.school }}{% if e.year %} ({{ e.year }}){% endif %}
+          {% if e.details %}
+            <ul>
+              {% for d in e.details %}<li>{{ d }}</li>{% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% else %}
+        <li>{{ e }}</li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
 
-  {% if r.certifications %}
-  <section>
-    <h2>Certifications</h2>
-    <ul>
-      {% for c in r.certifications %}<li>{{ c }}</li>{% endfor %}
-    </ul>
-  </section>
-  {% endif %}
+{% if r.certifications %}
+<section>
+  <h2>Certifications</h2>
+  <ul>
+    {% for c in r.certifications %}
+      {% if c contains 'name' %}
+        <li>{{ c.name }}{% if c.issuer %} — {{ c.issuer }}{% endif %}{% if c.year %} ({{ c.year }}){% endif %}</li>
+      {% else %}
+        <li>{{ c }}</li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
 </article>

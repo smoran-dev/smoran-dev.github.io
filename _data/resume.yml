@@ -1,56 +1,90 @@
-name: "Sean Moran"
-title: "Data Engineering Manager · Fintech & AI"
+name: "Sean E. Moran"
+title: "Data Engineering Manager · Software Developer · Business Analyst"
+
 contact:
+  email: "smoran38.dev@gmail.com"
   linkedin: "https://www.linkedin.com/in/seanemoran"
-  github: "https://github.com/smoran-dev"
-  location: "Boston, MA"
-  website: "https://smoran-dev.github.io"
-  download_pdf: "/assets/Sean_Moran_Resume.pdf" # optional; add the file later
-summary: "Data Engineering leader focused on Snowflake, dbt, scalable ELT, and applied AI/LLMs. I build reliable data platforms and ship AI-powered features."
+
+summary: "Data engineering leader with hands-on depth in Snowflake, dbt, and AWS. Built and led teams, cut warehouse spend ~60%, and delivered reporting used to securitize $900M+ across multiple rounds."
 
 experience:
   - company: "Hometap"
     role: "Data Engineering Manager"
-    location: "Boston, MA"
-    start: "Aug 2021"
+    start: "Oct 2023"
     end: "Present"
     bullets:
-      - "Lead a team building Snowflake medallion architecture and dbt pipelines."
-      - "Implemented masking policies, role architecture, and cost/performance optimizations."
-      - "Shipped AI summarization and document-extraction features powering analytics."
-  - company: Plymouth Rock Assurance"
-    role: "Data Analyst"
-    location: "Boston, MA"
-    start: "2016"
-    end: "2021"
-    bullets:
-      - "Built ELT with Fivetran, dbt; orchestrated with Airflow/Step Functions."
-      - "Optimized pipelines and delivered SLA-backed reliability."
+      - "Lead and mentor a team of 4 data engineers; set platform strategy with leadership, product, and engineering."
+      - "Continue IC work alongside management due to provisioning constraints."
+      - "Design ingestion pipelines across multiple endpoints (Python, Fivetran, Airflow, AWS)."
+      - "Own vendor accounts and contracts for Snowflake, dbt, Fivetran."
+      - "Drove warehouse cost optimization (~60% reduction)."
+      - "Led reporting/data design that supported securitizing $900M+ of capital over 5 rounds."
 
-projects:
-  - name: "ElevateCV — AI Resume Builder"
-    desc: "Serverless app (Lambda + API Gateway) that enhances resumes via LLM prompts; Next.js UI with auth and uploads."
-  - name: "Jetson Orin Nano “Momo-Nano”"
-    desc: "Local LLM + vision stack on Jetson; dockerized runtimes, n8n automations, hardware tuning."
-    links:
-      - label: "Blog"
-        url: "https://smoran-dev.github.io/blog/"
+  - company: "Hometap"
+    role: "Data Engineer"
+    start: "Sep 2021"
+    end: "Oct 2023"
+    bullets:
+      - "Managed and deployed analytics (Tableau, Power BI, Canvas)."
+      - "Built Snowflake ↔ Salesforce integrations with Apex classes and security integrations."
+      - "Delivered end-to-end pipelines with dbt, Python, SQL, Airflow, Snowflake, Spark, Stitch, Airbyte."
+      - "Shipped next-gen data architecture and self-serve data."
+      - "Automated reporting via SQL/Python/dbt parsing to retire repetitive manual tasks."
+
+  - company: "Plymouth Rock Assurance"
+    role: "Data Analyst"
+    start: "Sep 2016"
+    end: "Sep 2021"
+    bullets:
+      - "Automated statistical/transactional reporting (Control-M, shell, Informatica)."
+      - "Tableau Server admin & developer (upgrades, patching, API scripts, viz dev); trained 100+ users incl. mobile."
+      - "Partnered with DBAs to build/maintain DB2 & SQL Server databases."
+      - "Analyzed vendor reinsurance feeds and produced scheduled regulatory submissions."
+
+  - company: "FM Global"
+    role: "Co-op Tech III"
+    start: "Jun 2015"
+    end: "Dec 2015"
+    bullets:
+      - "Wrote test cases and performed QA for the claims management system."
+      - "Reverse-engineered a C# app for UI smoke testing (automation)."
+      - "Proposed rewrite after reverse-engineering a web app; built CRM Dynamics executive dashboards."
+      - "Delivered recurring reporting in Dynamics and Excel."
+
+education:
+  - degree: "M.S., Information Technology (Software Application Development)"
+    school: "Southern New Hampshire University"
+    year: "2021"
+    details:
+      - "Distributed Application Development"
+      - "Operating Systems, Database Design, Networking"
+      - "IT Project Management"
+      - "Software Design & Modeling"
+  - degree: "B.S.B.A., Computer Information Systems"
+    school: "Bryant University"
+    year: "2016"
+    details:
+      - "SQL, Access, Excel"
+      - "Database Design, IT Project Management"
+      - "Captain, Bryant Rugby Club"
+      - "Men’s Club Athlete of the Year ’16"
 
 skills:
   - "Snowflake"
-  - "dbt"
-  - "SQL"
-  - "Python"
-  - "Terraform"
-  - "AWS (Lambda, Step Functions, S3, RDS, Transfer Family)"
+  - "AWS (Lambda, S3, ECS)"
   - "Airflow"
+  - "dbt"
   - "Spark"
-  - "Fivetran"
-  - "LLMs (Bedrock, OpenAI)"
-
-education:
-  - "M.S., Software Application Development — Southern New Hampshire University"
-  - "B.S., Computer Science — Bryant University"
-
-certifications:
-  - "AWS Data Engineer Associate (in progress)"
+  - "Terraform"
+  - "Git"
+  - "Python"
+  - "SQL"
+  - "Java"
+  - "Bash"
+  - "Scalable ELT pipelines"
+  - "Data modeling"
+  - "Performance tuning"
+  - "Cost optimization"
+  - "Technical roadmap planning"
+  - "Cross-functional collaboration"
+  - "Mentorship & team development"
