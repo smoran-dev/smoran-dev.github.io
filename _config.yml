@@ -1,10 +1,13 @@
-title: "SMORAN-DEV - Blog & Resume"
+title: "smoran-dev - Blog & Resume"
 description: "Data Engineering, AI, Snowflake, Jetson tinkering, and notes."
 url: "https://smoran-dev.github.io"
 baseurl: ""
+timezone: America/New_York
 
-# Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
+
 theme: minima
 permalink: "/:categories/:title/"
 
@@ -12,31 +15,38 @@ header_pages:
   - blog.markdown
   - pages/resume.md
 
-plugins: # (alias: 'gems' also works on Jekyll 3.x)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+gems:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-paginate
 
-# Pagination
 paginate: 6
 paginate_path: "/blog/page:num/"
 
-# Minima theme tweaks
+sass:
+  style: compressed
+
 minima:
   skin: auto
   social_links:
     - { platform: github, user_url: "https://github.com/smoran-dev" }
-    - { platform: linkedin, user_url: "https://www.linkedin.com/in/seanemoran" }
+    - { platform: linkedin, user_url: "https://www.linkedin.com/in/seanmoran5" }
 
-# Exclude from build
 exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
   - vendor
+  - .bundle
+  - log
+  - tmp
 
-# Defaults (expanded mapping to avoid YAML inline edge cases)
 defaults:
   - scope:
       path: "_posts"
