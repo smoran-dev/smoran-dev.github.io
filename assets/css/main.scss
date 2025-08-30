@@ -1,0 +1,26 @@
+// Import Minima defaults (optional)
+@import "minima";
+
+
+// Layout polish
+.container { max-width: 860px; margin: 2rem auto; padding: 0 1rem; }
+.site-nav { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding: 1rem 0; }
+.site-nav ul { list-style:none; display:flex; gap:1rem; margin:0; padding:0; }
+.site-title { font-weight:700; text-decoration:none; }
+.hero { margin: 2rem 0; }
+.post-list { padding-left: 0; }
+.post-list li { margin-bottom: 1.25rem; list-style:none; }
+.post-meta { color: #666; }
+.pager { display:flex; justify-content:space-between; margin-top:1.5rem; }
+.resume h1 { margin-bottom: 0; }
+.resume .meta { color:#666; }
+.resume .job { margin: 1rem 0 1.25rem; }
+
+
+// Dark mode tweaks
+@media (prefers-color-scheme: dark) {
+body { background:#0b0b0f; color:#e7e7ee; }
+a { color:#8fb8ff; }
+.site-nav { border-bottom:1px solid #222; }
+.post-meta, .resume .meta { color:#aaa; }
+}

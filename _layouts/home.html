@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<section class="hero">
+<h1>Hey, I’m Sean 👋</h1>
+<p>Data Engineering Manager in Boston. I write about Snowflake, dbt, AI/LLMs, Jetson builds, and side projects.</p>
+</section>
+<section>
+<h2>Latest Posts</h2>
+<ul class="post-list">
+{% for post in paginator.posts %}
+<li>
+<a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+<span class="post-date">{{ post.date | date: "%b %d, %Y" }}</span>
+<p>{{ post.excerpt | strip_html | truncate: 160 }}</p>
+</li>
+{% endfor %}
+</ul>
+<div class="pager">
+{% if paginator.previous_page %}<a href="{{ paginator.previous_page_path | relative_url }}">← Newer</a>{% endif %}
+{% if paginator.next_page %}<a href="{{ paginator.next_page_path | relative_url }}">Older →</a>{% endif %}
+</div>
+</section>
