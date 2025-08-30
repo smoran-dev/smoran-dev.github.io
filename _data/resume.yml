@@ -1,0 +1,56 @@
+name: "Sean Moran"
+title: "Data Engineering Manager · Fintech & AI"
+contact:
+  linkedin: "https://www.linkedin.com/in/seanemoran"
+  github: "https://github.com/smoran-dev"
+  location: "Boston, MA"
+  website: "https://smoran-dev.github.io"
+  download_pdf: "/assets/Sean_Moran_Resume.pdf" # optional; add the file later
+summary: "Data Engineering leader focused on Snowflake, dbt, scalable ELT, and applied AI/LLMs. I build reliable data platforms and ship AI-powered features."
+
+experience:
+  - company: "Hometap"
+    role: "Data Engineering Manager"
+    location: "Boston, MA"
+    start: "Aug 2021"
+    end: "Present"
+    bullets:
+      - "Lead a team building Snowflake medallion architecture and dbt pipelines."
+      - "Implemented masking policies, role architecture, and cost/performance optimizations."
+      - "Shipped AI summarization and document-extraction features powering analytics."
+  - company: Plymouth Rock Assurance"
+    role: "Data Analyst"
+    location: "Boston, MA"
+    start: "2016"
+    end: "2021"
+    bullets:
+      - "Built ELT with Fivetran, dbt; orchestrated with Airflow/Step Functions."
+      - "Optimized pipelines and delivered SLA-backed reliability."
+
+projects:
+  - name: "ElevateCV — AI Resume Builder"
+    desc: "Serverless app (Lambda + API Gateway) that enhances resumes via LLM prompts; Next.js UI with auth and uploads."
+  - name: "Jetson Orin Nano “Momo-Nano”"
+    desc: "Local LLM + vision stack on Jetson; dockerized runtimes, n8n automations, hardware tuning."
+    links:
+      - label: "Blog"
+        url: "https://smoran-dev.github.io/blog/"
+
+skills:
+  - "Snowflake"
+  - "dbt"
+  - "SQL"
+  - "Python"
+  - "Terraform"
+  - "AWS (Lambda, Step Functions, S3, RDS, Transfer Family)"
+  - "Airflow"
+  - "Spark"
+  - "Fivetran"
+  - "LLMs (Bedrock, OpenAI)"
+
+education:
+  - "M.S., Software Application Development — Southern New Hampshire University"
+  - "B.S., Computer Science — Bryant University"
+
+certifications:
+  - "AWS Data Engineer Associate (in progress)"

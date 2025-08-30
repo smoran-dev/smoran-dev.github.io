@@ -1,0 +1,92 @@
+---
+layout: default
+---
+
+{%- assign r = site.data.resume -%}
+
+<article class="resume">
+  <header>
+    <h1>{{ r.name }}</h1>
+    {% if r.title %}<p>{{ r.title }}</p>{% endif %}
+
+    <p>
+      {%- assign first = true -%}
+      {%- if r.contact and r.contact.email -%}{% unless first %} · {% endunless %}<a href="mailto:{{ r.contact.email }}">{{ r.contact.email }}</a>{% assign first = false %}{% endif -%}
+      {%- if r.contact and r.contact.linkedin -%}{% unless first %} · {% endunless %}<a href="{{ r.contact.linkedin }}">LinkedIn</a>{% assign first = false %}{% endif -%}
+      {%- if r.contact and r.contact.github -%}{% unless first %} · {% endunless %}<a href="{{ r.contact.github }}">GitHub</a>{% assign first = false %}{% endif -%}
+      {%- if r.contact and r.contact.website -%}{% unless first %} · {% endunless %}<a href="{{ r.contact.website }}">Website</a>{% assign first = false %}{% endif -%}
+      {%- if r.contact and r.contact.location -%}{% unless first %} · {% endunless %}{{ r.contact.location }}{% assign first = false %}{% endif -%}
+      {%- if r.contact and r.contact.download_pdf -%}{% unless first %} · {% endunless %}<a href="{{ r.contact.download_pdf }}">Download PDF</a>{% assign first = false %}{% endif -%}
+    </p>
+  </header>
+
+  {% if r.summary %}
+  <section>
+    <h2>Summary</h2>
+    <p>{{ r.summary }}</p>
+  </section>
+  {% endif %}
+
+  {% if r.experience %}
+  <section>
+    <h2>Experience</h2>
+    {% for job in r.experience %}
+      <div class="job">
+        <h3>{{ job.role }} — {{ job.company }}</h3>
+        <p class="meta">
+          {% if job.location %}{{ job.location }} · {% endif %}{{ job.start }} — {{ job.end }}
+        </p>
+        {% if job.bullets %}
+        <ul>
+          {% for b in job.bullets %}<li>{{ b }}</li>{% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if r.projects %}
+  <section>
+    <h2>Projects</h2>
+    {% for proj in r.projects %}
+      <div class="project">
+        <h3>{{ proj.name }}</h3>
+        <p>{{ proj.desc }}</p>
+        {% if proj.links %}
+          <p>
+            {% for l in proj.links %}
+              <a href="{{ l.url }}">{{ l.label }}</a>{% unless forloop.last %} · {% endunless %}
+            {% endfor %}
+          </p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if r.skills %}
+  <section>
+    <h2>Skills</h2>
+    <p>{{ r.skills | join: " · " }}</p>
+  </section>
+  {% endif %}
+
+  {% if r.education %}
+  <section>
+    <h2>Education</h2>
+    <ul>
+      {% for e in r.education %}<li>{{ e }}</li>{% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if r.certifications %}
+  <section>
+    <h2>Certifications</h2>
+    <ul>
+      {% for c in r.certifications %}<li>{{ c }}</li>{% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</article>
