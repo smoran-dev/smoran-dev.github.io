@@ -3,8 +3,17 @@ layout: default
 ---
 
 <section class="hero">
-  <h1>Hey, I’m Sean 👋</h1>
-  <p>Data Engineering Manager in Boston. I write about Snowflake, dbt, AI/LLMs, Jetson builds, and side projects.</p>
+  <img class="avatar" src="https://github.com/smoran-dev.png" alt="Sean Moran" width="96" height="96" loading="lazy">
+  <div class="hero-body">
+    <h1>Hey, I’m Sean 👋</h1>
+    <p>Data Engineering Manager in Boston. I write about Snowflake, dbt, AI/LLMs, Jetson builds, and side projects.</p>
+
+    <div class="hero-actions">
+      <a class="btn primary" href="{{ '/resume/' | relative_url }}">View resume</a>
+      <a class="btn ghost"   href="{{ '/blog/'   | relative_url }}">Read the blog</a>
+      <a class="btn ghost"   href="{{ '/feed.xml'| relative_url }}">Subscribe</a>
+    </div>
+  </div>
 </section>
 
 <section>
@@ -31,6 +40,4 @@ layout: default
   {%- else -%}
     <p>No posts yet. Add a file in <code>_posts/</code> named like <code>YYYY-MM-DD-my-post.md</code>.</p>
   {%- endif -%}
-</section>
-
 </section>
