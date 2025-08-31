@@ -15,6 +15,12 @@ $accent: #10a37f;    // accent/CTA
 
 .wrapper { max-width: 860px; }
 
+.theme-toggle{border:1px solid rgba(255,255,255,.15);background:transparent;color:inherit;border-radius:999px;padding:.35rem .6rem;margin-left:.5rem;cursor:pointer}
+html[data-theme='light'] .theme-toggle{border-color:rgba(0,0,0,.15)}
+.theme-toggle:hover{background:rgba(255,255,255,.06)}
+html[data-theme='light'] .theme-toggle:hover{background:rgba(0,0,0,.06)}
+
+
 /* Respect OS dark unless explicitly forced to light; always honor data-theme=dark */
 html[data-theme='dark'] { color-scheme: dark; }
 @media (prefers-color-scheme: dark) { html:not([data-theme='light']) { color-scheme: dark; } }
@@ -63,6 +69,33 @@ html[data-theme='dark'] .site-header {
 .site-nav { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
 .site-nav .page-link { color: inherit !important; text-decoration: none; }
 .site-nav .page-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Disable Minima's mobile dropdown entirely */
+.site-nav input#nav-trigger,
+.site-nav label[for="nav-trigger"],
+.site-nav .menu-icon,
+.site-nav .trigger {
+  display: none !important;
+}
+
+/* Ensure our custom nav never picks up dropdown chrome */
+.site-nav {
+  position: static !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+.site-nav .page-link {
+  background: transparent !important;
+}
+
+/* Small-screen layout polish */
+@media (max-width: 700px) {
+  .bar { gap: .5rem; }
+  .site-title { font-size: 1.05rem; }
+  .site-nav { gap: .5rem; flex-wrap: wrap; }
+  .site-nav .page-link { padding: .35rem .5rem; border-radius: 8px; }
+}
 
 /* ── Body chrome ──────────────────────────────────────────────────────────── */
 html[data-theme='dark'] hr { border-color: $border; }
@@ -148,6 +181,8 @@ html[data-theme='dark'] .btn.ghost:hover { background: rgba(255,255,255,.06); bo
 .post-list li:hover { transform: translateY(-2px); }
 .post-list a { font-weight: 600; }
 .post-date { opacity: .7; font-size: .9rem; margin-left: .35rem; }
+.post-read { opacity:.7; font-size:.9rem; }
+
 
 html[data-theme='dark'] .post-list li {
   border-color: rgba(255,255,255,.08);

@@ -24,10 +24,22 @@ layout: default
     <ul class="post-list">
       {%- for post in posts -%}
         <li>
-          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-          <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-          <p>{{ post.excerpt | strip_html | truncate: 160 }}</p>
-        </li>
+ <a class="stretched-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+  {%- comment -%} reading-time calc (≈200 wpm) {%- endcomment -%}
+  {%- assign _content = post.content
+      | strip_html
+      | strip_newlines
+      | replace: '  ', ' '
+      | replace: '  ', ' '
+      | replace: '  ', ' ' -%}
+  {%- assign word_count = _content | split: ' ' | size -%}
+  {%- assign minutes = word_count | plus: 199 | divided_by: 200 -%}
+
+  <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+  <span class="post-read"> · {{ minutes }} min read</span>
+
+  <p>{{ post.excerpt | strip_html | truncate: 160 }}</p>
+</li>
       {%- endfor -%}
     </ul>
 
