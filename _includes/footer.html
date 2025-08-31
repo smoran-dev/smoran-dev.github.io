@@ -1,3 +1,11 @@
 <footer class="site-footer">
 <p>© {{ "now" | date: "%Y" }} {{ site.title }} · Built with Jekyll & GitHub Pages</p>
+<script>
+(function(){
+  var b=document.querySelector('.theme-toggle'); if(!b) return;
+  function icon(){ b.textContent=(document.documentElement.getAttribute('data-theme')||'light')==='dark'?'☀️':'🌙';}
+  b.onclick=function(){var h=document.documentElement,t=h.getAttribute('data-theme');var n=t==='dark'?'light':'dark';h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){} icon();};
+  icon();
+})();
+</script>
 </footer>
