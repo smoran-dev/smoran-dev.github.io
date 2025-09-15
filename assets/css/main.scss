@@ -20,6 +20,33 @@ html[data-theme='light'] .theme-toggle{border-color:rgba(0,0,0,.15)}
 .theme-toggle:hover{background:rgba(255,255,255,.06)}
 html[data-theme='light'] .theme-toggle:hover{background:rgba(0,0,0,.06)}
 
+.post-cover {
+  aspect-ratio: 21 / 9;      /* shallow banner */
+  max-height: 360px;         /* also caps very tall screens */
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.12);
+  margin: 0 0 1.25rem;       /* spacing below hero */
+}
+html[data-theme='light'] .post-cover { border-color: rgba(0,0,0,.12); }
+
+.post-cover img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;          /* fills frame; crops excess */
+  object-position: center;    /* can be overridden via page.image_position */
+}
+
+.post-meta { color: inherit; opacity: .7; }
+
+/* Generic post images + figures */
+.post img { width: 100%; height: auto; border-radius: 12px; border:1px solid rgba(255,255,255,.12); }
+html[data-theme='light'] .post img { border-color: rgba(0,0,0,.12); }
+
+.post-figure { margin: 1rem 0 1.25rem; }
+.post-figure figcaption { margin-top: .4rem; opacity: .8; font-size: .95rem; }
+
 
 /* Respect OS dark unless explicitly forced to light; always honor data-theme=dark */
 html[data-theme='dark'] { color-scheme: dark; }
@@ -136,7 +163,7 @@ html[data-theme='dark'] .btn.ghost:hover { background: rgba(255,255,255,.06); bo
   display: grid;
   grid-template-columns: 96px 1fr;
   gap: 1rem;
-  align-items: center;
+  align-items: start;
   margin: 2rem 0 2.5rem;
 }
 .avatar {
@@ -169,6 +196,81 @@ html[data-theme='dark'] .btn.ghost:hover { background: rgba(255,255,255,.06); bo
   .hero { grid-template-columns: 1fr; }
   .avatar { width: 72px; height: 72px; }
 }
+
+.see-more { margin-top: .5rem; }
+
+.see-more > summary {
+  list-style: none;
+  cursor: pointer;
+  color: $link;              /* or your link color */
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  padding: .25rem 0;
+  user-select: none;
+}
+
+/* About - “See more”/“See less”*/
+/* Tighter summary spacing */
+.see-more { margin-top: .25rem; } /* was .5+ */
+.see-more > summary{
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  padding: .1rem 0;           /* tighter */
+  line-height: 1.1;           /* tighter */
+  color: $link;
+}
+.see-more > summary::-webkit-details-marker{ display:none; }
+.see-more .chev{ transition: transform .15s ease; transform-origin: 50% 45%; }
+.see-more[open] .chev{ transform: rotate(180deg); }
+
+/* Swap labels without JS */
+.see-more .open{ display:none; }
+.see-more[open] .open{ display:inline; }
+.see-more[open] .closed{ display:none; }
+
+/* Compact gap between summary and revealed content */
+.see-more[open] > summary{ margin-bottom: .35rem; }
+
+/* Callout style for the expanded section */
+.see-more__body{
+  position: relative;
+  padding: .75rem 1rem .85rem 1.05rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+  display: inline-block;
+  box-sizing: border-box;
+}
+html[data-theme='light'] .see-more__body{
+  border-color: rgba(0,0,0,.08);
+  background: rgba(0,0,0,.03);
+}
+
+/* Accent bar on the left (matches your $accent → $link gradient) */
+.see-more__body::before{
+  content:"";
+  position:absolute;
+  left:0; top:.75rem; bottom:.75rem;
+  width:3px; border-radius:3px;
+  background: linear-gradient(180deg, $accent, $link);
+}
+
+/* Tighten paragraph spacing inside the callout */
+.see-more__body p{ margin:0; }
+.see-more__body p + p{ margin-top:.55rem; }
+
+/* Focus state for accessibility */
+.see-more > summary:focus-visible{
+  outline: 2px solid $link;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+
 
 /* ── Cards for Latest Posts ──────────────────────────────────────────────── */
 .post-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; padding: 0; }

@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<article class="post">
+  <header>
+    <h1>{{ page.title }}</h1>
+
+    {%- comment -%} reading-time calc (≈200 wpm) {%- endcomment -%}
+    {%- assign _content = content
+        | strip_html
+        | strip_newlines
+        | replace: '  ', ' ' 
+        | replace: '  ', ' ' 
+        | replace: '  ', ' ' -%}
+    {%- assign word_count = _content | split: ' ' | size -%}
+    {%- assign minutes = word_count | plus: 199 | divided_by: 200 -%}
+
+    <p class="post-meta">
+      {{ page.date | date: "%B %d, %Y" }} · {{ minutes }} min read
+    </p>
+
+    {% if page.image %}
+      <figure class="post-cover" style="--pos: {{ page.image_position | default: 'center' }};">
+        <img
+          src="{{ page.image | relative_url }}"
+          alt="{{ page.image_alt | default: page.title | escape }}"
+          width="2048" height="768"        
+          loading="eager" fetchpriority="high" decoding="async"
+        >
+        {% if page.image_caption %}
+          <figcaption>{{ page.image_caption }}</figcaption>
+        {% endif %}
+      </figure>
+    {% endif %}
+  </header>
+
+  {{ content }}
+</article>
