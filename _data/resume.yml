@@ -5,7 +5,7 @@ contact:
   email: "smoran38.dev@gmail.com"
   linkedin: "https://www.linkedin.com/in/seanemoran"
 
-summary: "Data engineering leader with hands-on depth in Snowflake, dbt, and AWS. Built and led teams, cut warehouse spend ~60%, and delivered reporting used to securitize $900M+ across multiple rounds."
+summary: "Data engineering leader with deep experience in Snowflake, dbt, and AWS. Always tinkering, coaching rugby, and nerding out on tech."
 
 experience:
   - company: "Hometap"
@@ -13,12 +13,12 @@ experience:
     start: "Oct 2023"
     end: "Present"
     bullets:
-      - "Lead and mentor a team of 4 data engineers; set platform strategy with leadership, product, and engineering."
+      - "Lead and mentor a team of 2 data engineers; set platform strategy with leadership, product, and engineering."
       - "Continue IC work alongside management due to provisioning constraints."
       - "Design ingestion pipelines across multiple endpoints (Python, Fivetran, Airflow, AWS)."
-      - "Own vendor accounts and contracts for Snowflake, dbt, Fivetran."
+      - "Manage vendor accounts and contracts for Snowflake, dbt, Fivetran."
       - "Drove warehouse cost optimization (~60% reduction)."
-      - "Led reporting/data design that supported securitizing $900M+ of capital over 5 rounds."
+      - "Led data flow design that supported securitizing $900M+ of capital over 5 rounds."
 
   - company: "Hometap"
     role: "Data Engineer"
@@ -26,8 +26,8 @@ experience:
     end: "Oct 2023"
     bullets:
       - "Managed and deployed analytics (Tableau, Power BI, Canvas)."
-      - "Built Snowflake ↔ Salesforce integrations with Apex classes and security integrations."
-      - "Delivered end-to-end pipelines with dbt, Python, SQL, Airflow, Snowflake, Spark, Stitch, Airbyte."
+      - "Built Snowflake/Salesforce integrations with Apex classes and security integrations."
+      - "Delivered end-to-end pipelines with dbt, Python, SQL, Airflow, Snowflake, Fivetran, Stitch."
       - "Shipped next-gen data architecture and self-serve data."
       - "Automated reporting via SQL/Python/dbt parsing to retire repetitive manual tasks."
 
@@ -37,7 +37,7 @@ experience:
     end: "Sep 2021"
     bullets:
       - "Automated statistical/transactional reporting (Control-M, shell, Informatica)."
-      - "Tableau Server admin & developer (upgrades, patching, API scripts, viz dev); trained 100+ users incl. mobile."
+      - "Tableau Server admin & developer (upgrades, patching, API scripts, dashboard dev); trained 100+ users for mobile deployment."
       - "Partnered with DBAs to build/maintain DB2 & SQL Server databases."
       - "Analyzed vendor reinsurance feeds and produced scheduled regulatory submissions."
 
@@ -47,8 +47,8 @@ experience:
     end: "Dec 2015"
     bullets:
       - "Wrote test cases and performed QA for the claims management system."
-      - "Reverse-engineered a C# app for UI smoke testing (automation)."
-      - "Proposed rewrite after reverse-engineering a web app; built CRM Dynamics executive dashboards."
+      - "Reverse-engineered C# application for UI smoke testing (automation)."
+      - "Proposed rewrite after reverse-engineering data taxonomy web app; built CRM Dynamics executive dashboards."
       - "Delivered recurring reporting in Dynamics and Excel."
 
 education:
